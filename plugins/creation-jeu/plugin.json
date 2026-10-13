@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "creation-jeu",
+  "version": "1.0.0",
+  "description": "Créer un mini-jeu jouable dans le navigateur (Canvas 2D, JavaScript ou TypeScript) à partir d'une simple demande : une skill qui structure la boucle de jeu, les contrôles, la difficulté, les effets visuels et le tableau des meilleurs scores.",
+  "author": {
+    "name": "Formation GitHub Copilot",
+    "url": "https://github.com/aubayfab"
+  },
+  "homepage": "https://github.com/aubayfab/formation-githubcopilot/tree/marketplace/plugins/creation-jeu",
+  "repository": "https://github.com/aubayfab/formation-githubcopilot",
+  "keywords": ["jeu", "canvas", "javascript", "typescript", "arcade"]
+}

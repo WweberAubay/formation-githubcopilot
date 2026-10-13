@@ -12,6 +12,7 @@ Cette branche (`marketplace`) ne contient que la marketplace : le catalogue [`.g
 | [tests-vitest](plugins/tests-vitest) | skill, instructions, agent | Des tests Vitest déterministes, même quand le code dépend du temps, du hasard, du stockage ou du Canvas ; un rapport de tests court ; un agent testeur qui ne touche pas au code de production. |
 | [docs-a-jour](plugins/docs-a-jour) | serveur MCP, skill | Fait consulter à l'agent la documentation de la version installée dans le projet (serveur Context7), source citée. |
 | [atelier-plugins](plugins/atelier-plugins) | 2 skills | Créer un plugin, valider la marketplace, publier une nouvelle version sans oublier de fichier. |
+| [creation-jeu](plugins/creation-jeu) | skill | Crée un mini-jeu jouable dans le navigateur (Canvas 2D) à partir d'une demande comme « fais-moi un casse-briques » : boucle de jeu, contrôles, difficulté, effets arcade, meilleurs scores. |
 
 Les versions à jour sont dans le catalogue et dans le `CHANGELOG.md` de chaque plugin.
 
