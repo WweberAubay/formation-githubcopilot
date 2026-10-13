@@ -32,6 +32,19 @@ export function compterPages(total: number, size: number): number {
   return Math.max(1, Math.ceil(total / size));
 }
 
+const ENTITES: Readonly<Record<string, string>> = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+};
+
+/** Texte venu du fichier de scores, rendu inoffensif avant d'être inséré dans du HTML. */
+function echapper(texte: string): string {
+  return texte.replace(/[&<>"']/g, (caractere) => ENTITES[caractere]);
+}
+
 function formaterPoints(points: number): string {
   return String(points).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
@@ -74,8 +87,8 @@ export function rendreLignes(
       return `
         <tr class="${classes}" style="--delai: ${index * 40}ms">
           <td class="tableau__rang">${String(rang).padStart(2, '0')}</td>
-          <td class="tableau__pseudo">${score.pseudo}</td>
-          <td class="tableau__jeu">${nomDuJeu(score.jeu)}</td>
+          <td class="tableau__pseudo">${echapper(score.pseudo)}</td>
+          <td class="tableau__jeu">${echapper(nomDuJeu(score.jeu))}</td>
           <td class="tableau__points">${formaterPoints(score.points)}</td>
           <td class="tableau__date">${formatDate(score.date)}</td>
         </tr>`;
