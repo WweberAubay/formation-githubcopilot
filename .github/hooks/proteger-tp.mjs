@@ -7,9 +7,9 @@
 // les appels d'outils qui visent un fichier protégé.
 // Pour une lecture, on teste l'entrée complète de l'outil plutôt qu'un champ précis :
 // le nom de l'outil et de ses paramètres varie selon la version de VS Code.
-const fs = require('node:fs');
-const os = require('node:os');
-const path = require('node:path');
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 
 const SESSIONS_CHECK_REPORT = path.join(os.tmpdir(), 'formation-copilot-check-report');
 const RESERVE_STAGIAIRE = /notes[-_ ]?tp/;
