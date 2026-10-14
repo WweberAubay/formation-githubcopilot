@@ -72,10 +72,12 @@ export function rendreLignes(
     return '<tr><td class="tableau__vide" colspan="5">Aucun score pour l’instant</td></tr>';
   }
 
+  const debut = (page - 1) * size;
+
   return trierScores(scores)
-    .slice(0, 10)
+    .slice(debut, debut + size)
     .map((score, index) => {
-      const rang = index + 1;
+      const rang = debut + index + 1;
       const classes = [
         'tableau__ligne',
         rang <= 3 ? `tableau__ligne--podium-${rang}` : '',
