@@ -160,7 +160,7 @@ if (tests.length === 0) {
 const codeTests = tests.map(lire).join("\n");
 const exportees = [
   ...codeLogique.matchAll(
-    /\bexport\s+(?:async\s+)?function\s+(\w+)|\bexport\s+const\s+(\w+)\s*=\s*(?:async\s*)?(?:\(|function\b|\w+\s*=>)/g,
+    /\bexport\s+(?:async\s+)?function\s+(\w+)|\bexport\s+const\s+(\w+)\s*=\s*(?:async\s*)?(?:function\b|\w+\s*=>|\([^;]*?=>)/g,
   ),
 ].map((m) => m[1] ?? m[2]);
 const testees = exportees.filter((nom) =>
